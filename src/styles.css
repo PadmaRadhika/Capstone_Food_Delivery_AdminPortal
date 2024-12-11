@@ -1,0 +1,171 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #305d65;
+    color: white;
+    
+  }
+  
+  header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  header nav a {
+    margin: 0 1rem;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .dashboard {
+    padding: 2rem;
+    
+    
+  }
+  
+  .dashboard h1 {
+    margin-bottom: 2rem;
+    font-family: Arial, sans-serif;
+    color: black;
+    
+  }
+  
+  .stats {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    gap: 50px;
+
+  }
+  
+  .stat-card {
+    flex: 1;
+    padding: 1.5rem;    
+    border-radius: 50px;
+    text-align: center;
+    max-height: fit-content;
+    color: Black;
+    font-weight:bolder;
+    max-width:300px;
+    box-shadow: 0 0 10px black;
+    background-color: #e0dbdb;
+    /*background-size: cover;
+    background-image: url('assets/images/food1.jpg');*/
+    
+  }
+  
+  .actions {
+    margin-top: 2rem;
+    
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 2px;  
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: fit-content ;
+    align-items: center; 
+    background-size: cover;
+    background-color: #e0dbdb;
+    /* background-image: url('assets/images/food13.jpg'); */
+    
+    
+}
+
+h1 {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input, select, textarea {
+    width: 95%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
+}
+.search-input{
+  background-image: url('assets/images/search.jpg');
+  background-position: 365px; 
+  background-repeat: no-repeat;
+  /* padding: 12px 20px 12px 40px; */
+  background-color: white;
+}
+
+button {
+    
+    background-color: #305d65;
+    color: white;;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;  
+    font-size: 15px;   
+    padding: 10px;
+    
+}
+
+
+.center-button {
+    display: block; /* Make the button a block element */
+    margin: 0 auto; /* Center it horizontally */
+}
+.my-form {
+    background-image: url('assets/images/admin.jpg'); 
+    background-size: cover; /* Covers the entire form */    
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    padding: 20px; /* Adds some padding for better appearance */
+    background-color: white;
+    height: 100vh;
+
+}
+
+.nav-links {
+    list-style-type: none; /* Remove bullet points */
+    display: flex; /* Display links in a row */
+    justify-content:space-around; /* Space links evenly */
+}
+
+.nav-links li {
+    display: inline; /* Align items horizontally */
+}
+
+.nav-links a {
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 15px;
+    pointer-events: auto;
+}
+
+.nav-links a:hover {
+    background-color: #305d65;/* Darker green on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+.content {
+    padding: 20px; /* Padding for content area */
+}
+.example-form-field {
+    width: 200px;
+  }
+

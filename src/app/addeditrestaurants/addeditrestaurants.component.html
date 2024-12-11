@@ -1,0 +1,55 @@
+<body class = "my-form">
+<div class="container">
+    <h2>{{ isEditMode ? 'Edit Restaurant' : 'Add Restaurant' }}</h2>
+  
+    <form [formGroup]="restaurantForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Restaurant Name</label>
+        <input
+          id="name"
+          type="text"
+          formControlName="name"
+          class="form-control"
+          placeholder="Enter restaurant name"
+        />
+        <div *ngIf="restaurantForm.get('name')?.invalid && restaurantForm.get('name')?.touched" class="error">
+          Name is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="address">Address</label>
+        <textarea
+          id="address"
+          rows="3"
+          formControlName="address"
+          class="form-control"
+          placeholder="Enter address"
+        ></textarea>
+        <div *ngIf="restaurantForm.get('address')?.invalid && restaurantForm.get('address')?.touched" class="error">
+          Address is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="cuisine">Cuisine Type</label>
+        <input
+          id="cuisine"
+          type="text"
+          formControlName="cuisine"
+          class="form-control"
+          placeholder="Enter cuisine type"
+        />
+        <div *ngIf="restaurantForm.get('cuisine')?.invalid && restaurantForm.get('cuisine')?.touched" class="error">
+          Cuisine type is required.
+        </div>
+      </div>  
+      <br><br>
+      <div class="buttons">
+        <button type="submit" class="btn btn-primary" [disabled]="restaurantForm.invalid">
+          {{ isEditMode ? 'Update Restaurant' : 'Add Restaurant' }}
+        </button>
+        <button type="button" class="btn btn-secondary" routerLink="/restaurants">Cancel</button>
+      </div>
+    </form>
+  </div>
+</body> 

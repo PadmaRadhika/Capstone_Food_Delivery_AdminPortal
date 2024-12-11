@@ -1,0 +1,16 @@
+<header>
+<div class="logo">QuickSpoon's AdminPortal</div>
+    <nav>
+      <ul class="nav-links">
+        <a routerLink="/login">Login</a>
+      <a routerLink="/home">Home</a>
+      <a routerLink="/restaurants">Restaurants</a>
+      <a routerLink="/dishes">Dishes</a>      
+      <button (click)="logout()">Logout</button>
+      
+    </ul>
+    </nav>
+  </header>
+<div>
+  <router-outlet></router-outlet> <!-- This is where routed components will be displayed -->
+</div>

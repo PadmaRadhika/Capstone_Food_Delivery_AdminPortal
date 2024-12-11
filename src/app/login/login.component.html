@@ -1,0 +1,25 @@
+<body class = "my-form">
+<div class="container" >
+    <h2>Admin Login</h2>    
+    <form (ngSubmit)="login()" >
+      
+        <input type="text" placeholder="Username" id = "username"[(ngModel)]="credentials.username" name="username" required #username="ngModel">
+        <div *ngIf="username.invalid && username.touched" class="error-message">
+          Username is required.
+        </div>
+        <br><br>
+        <input type="password" placeholder="Password" id="password" required [(ngModel)]="credentials.password" name="password" #password="ngModel">
+        <div *ngIf="password.invalid && password.touched" class="error-message">
+          Password is required.
+        </div>
+        <br><br>
+      <button style="background-color:  #305d65;" class="center-button" type="submit">Login</button>
+      
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+    </form>
+  </div>
+</body>
+
+  

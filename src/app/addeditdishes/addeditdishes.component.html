@@ -1,0 +1,84 @@
+<body class = "my-form">
+    <div class="container">
+        <h2>{{ isEditMode ? 'Edit Dish' : 'Add Dish' }}</h2>
+      
+        <form [formGroup]="dishForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="name">Dish Name</label>
+            <input
+              id="name"
+              type="text"
+              formControlName="name"
+              class="form-control"
+              placeholder="Enter dish name"
+            />
+            <div *ngIf="dishForm.get('name')?.invalid && dishForm.get('name')?.touched" class="error-message">
+              Name is required.
+            </div>
+          </div>
+      
+          <div class="form-group">
+            <label for="restaurantName">Restaurant Name</label>
+            <input
+              id="restaurantName" 
+              type="text"             
+              formControlName="restaurantName"
+              class="form-control"
+              placeholder="Enter Restaurant Name"
+            >
+            <div *ngIf="dishForm.get('restaurantName')?.invalid && dishForm.get('restaurantName')?.touched" class="error-message">
+              Restaurant Name is required.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cuisine">Cuisine Type</label>
+            <input
+              id="cuisine"
+              type="text"
+              formControlName="cuisine"
+              class="form-control"
+              placeholder="Enter cuisine type"
+            />
+            <div *ngIf="dishForm.get('cuisine')?.invalid && dishForm.get('cuisine')?.touched" class="error-message">
+              Cuisine type is required.
+            </div>
+          </div> 
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input
+              id="price"
+              type="number"
+              formControlName="price"
+              class="form-control"
+              placeholder="Enter Price"
+            />
+            <div *ngIf="dishForm.get('price')?.invalid && dishForm.get('price')?.touched" class="error-message">
+              Price is required.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input
+              id="description"
+              type="text"
+              formControlName="description"
+              class="form-control"
+              placeholder="Enter Description"
+            />
+            <div *ngIf="dishForm.get('description')?.invalid && dishForm.get('description')?.touched" class="error-message">
+              description is required.
+            </div>
+          </div>
+          <br><br>
+          <div class="buttons">
+            <button type="submit" class="btn btn-primary" [disabled]="dishForm.invalid">
+              {{ isEditMode ? 'Update Dish' : 'Add Dish' }}
+            </button>            
+            <button type="button" class="btn btn-secondary" routerLink="/dishes">Cancel</button>
+          </div>
+          <div *ngIf="errorMessage" class="error-message">
+            {{ errorMessage }}
+          </div>
+        </form>
+      </div>
+    </body> 

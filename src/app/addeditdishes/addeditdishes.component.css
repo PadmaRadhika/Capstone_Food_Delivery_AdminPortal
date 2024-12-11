@@ -1,0 +1,9 @@
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.error-message {
+    color: red;
+    font-weight: bold;
+  }

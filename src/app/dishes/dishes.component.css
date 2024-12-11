@@ -1,0 +1,50 @@
+.dishes-container {
+    padding: 1rem;
+    color: white;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(240, 164, 65);
+  }
+  
+  header h2 {
+    margin: 0;
+  }
+  h2{
+    color: black;
+  }
+  
+  .search-filter {
+    display: flex;
+    margin: 1rem 0;
+    width: 100%;
+    
+  }
+  
+  table {
+    width: 100%;
+    
+  }
+  
+  .mat-form-field {
+    width: 60%;
+  }
+  .mat-icon{
+    width: 100%;
+    
+  }
+  button {
+    
+    background-color: #305d65;
+    color: white;
+    border: none;    
+    cursor: pointer;  
+    font-size: 15px;
+    width: 35%;   
+    
+    
+}
+  

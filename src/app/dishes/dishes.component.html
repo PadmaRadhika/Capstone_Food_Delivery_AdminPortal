@@ -1,0 +1,54 @@
+<body class="my-form">
+<div class="dishes-container container">
+    
+      <h2>Dishes Management</h2>
+      <div class="input-group">
+        
+        <input type="text" class="form-control search-input" placeholder="Search" style="width: 50%;" [(ngModel)]="searchQuery">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button style="width: fit-content;" routerLink="/dishes/new">Add Dish</button>   
+      </div>
+
+    <table mat-table [dataSource]="dishes | filter: searchQuery" class="mat-elevation-z8">
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let dish"> {{ dish.name }} </td>
+      </ng-container>
+  
+      <!-- Restaurant Column -->
+      <ng-container matColumnDef="restaurant">
+        <th mat-header-cell *matHeaderCellDef> Restaurant </th>
+        <td mat-cell *matCellDef="let dish"> {{ dish.restaurantName }} </td>
+      </ng-container>
+  
+      <!-- Price Column -->
+      <ng-container matColumnDef="cuisine">
+        <th mat-header-cell *matHeaderCellDef> Cuisine </th>
+        <td mat-cell *matCellDef="let dish"> {{ dish.cuisine }} </td>
+      </ng-container>
+
+      <!-- Price Column -->
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Price </th>
+        <td mat-cell *matCellDef="let dish"> {{ dish.price | currency }} </td>
+      </ng-container>
+  
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let dish">
+          <button mat-icon-button color="primary" [routerLink]="['/dishes', dish.id, 'edit']">
+            <mat-icon>edit</mat-icon>
+          </button>&nbsp;&nbsp;&nbsp;
+          <button mat-icon-button color="warn" (click)="deleteDish(dish.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="['name', 'restaurant', 'cuisine', 'price', 'actions']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['name', 'restaurant', 'cuisine', 'price', 'actions'];"></tr>
+    </table>
+  </div>
+</body>

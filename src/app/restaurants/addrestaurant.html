@@ -1,0 +1,54 @@
+<body>
+<div class="container">
+    <h2>{{ isEdit ? 'Edit Restaurant' : 'Add Restaurant' }}</h2>
+  
+    <form [formGroup]="restaurantForm" (ngSubmit)="onSubmit()">
+      <!-- Restaurant Name -->
+      <mat-form-field class="full-width">
+        <mat-label>Restaurant Name</mat-label>
+        <input type="text" formControlName="name" placeholder="Enter restaurant name">
+        <mat-error *ngIf="restaurantForm.get('name')?.invalid && restaurantForm.get('name')?.touched">
+          Restaurant name is required.
+        </mat-error>
+      </mat-form-field>
+  
+      <!-- Address -->
+      <mat-form-field class="full-width">
+        <mat-label>Address</mat-label>
+        <input type="text" formControlName="address" placeholder="Enter restaurant address"></textarea>
+        <mat-error *ngIf="restaurantForm.get('address')?.invalid && restaurantForm.get('address')?.touched">
+          Address is required.
+        </mat-error>
+      </mat-form-field>
+  
+      <!-- Cuisine Type -->
+      <mat-form-field class="full-width">
+        <mat-label>Cuisine</mat-label>
+        <mat-select formControlName="cuisine">
+          <mat-option *ngFor="let type of cuisines" [value]="type">{{ type }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="restaurantForm.get('cuisine')?.invalid && restaurantForm.get('cuisine')?.touched">
+          Cuisine type is required.
+        </mat-error>
+      </mat-form-field>
+  
+      <!-- Contact Number -->
+      <mat-form-field class="full-width">
+        <mat-label>Contact Number</mat-label>
+        <input type="tel" formControlName="contactNumber" placeholder="Enter contact number" >
+        <mat-error *ngIf="restaurantForm.get('contact')?.invalid && restaurantForm.get('contact')?.touched">
+          Valid contact number is required.
+        </mat-error>
+      </mat-form-field>
+  
+      <!-- Submit and Cancel Buttons -->
+      <div class="actions">
+        <button mat-raised-button color="primary" type="submit" [disabled]="restaurantForm.invalid">
+          {{ isEdit ? 'Update' : 'Add' }}
+        </button>
+        <button mat-raised-button color="warn" type="button" (click)="onCancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</body>
+  
